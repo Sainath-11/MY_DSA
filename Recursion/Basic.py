@@ -32,19 +32,32 @@ class Solution:
     def recurivseOb(self,num):
         if num == 0 :
             return 
-        print("Before Call")
+        print(f"Before Call {num}")
         self.recurivseOb(num-1)
-        print("After call")
+        print(f"After call {num}")
+    
     def printNumber1toN(self,num):
         if num == 0:
             return
         self.printNumber1toN(num-1)
         print(num)
+    
     def printNumber1toNB(self,num,i=0):
         if num ==i :
             return 
         print(i+1)
-        self.printNumber1toN(num,i+1)
+        self.printNumber1toNB(num,i+1)
+
+def main():
+    num = int(input("Enter the number:"))
+    sol = Solution()
+    sol.recurivseOb(num)
+    sol.printNumber1toN(num)
+    sol.printNumber1toNB(5,0)
+
+
+if __name__=="__main__":
+    main()
     
 
     
